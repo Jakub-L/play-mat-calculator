@@ -2,6 +2,10 @@ const colors: string[] = ["O", "Y", "B", "G"]
 const results: Set<string> = new Set()
 let count = 0
 
+const checkSymmetry = (arrangement: number[]) => {
+  count += 1
+}
+
 /**
  * Recursively generates the tile arrangements.
  * @param {number[]} current - The current investigated tiles and their colours.
@@ -10,7 +14,7 @@ let count = 0
  */
 const generate = (current: number[], colorsUsed: number[]) => {
   if (current.length === 16) {
-    count += 1
+    checkSymmetry(current)
   }
   else {
     for (let i = 0; i < colorsUsed.length; i++) {
