@@ -156,5 +156,3 @@ const generate = () => {
   recurse([], [0, 0, 0, 0]);
   return results;
 };
-
-const arrangements = generate();

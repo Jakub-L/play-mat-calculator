@@ -1,6 +1,23 @@
 const BASE_COLORS = ["yellow", "orange", "blue", "green"];
+
 const colourPermutations = getPermutations(BASE_COLORS);
-let arrangement = arrangements[Math.floor(Math.random() * arrangements.length)];
+const arrangements = load();
+
+let selectedIndex = Math.floor(Math.random() * arrangements.length);
+draw();
+
+function load() {
+  const savedArrangements = localStorage.getItem("arrangements");
+  if (savedArrangements) return JSON.parse(savedArrangements);
+  const arrangements = generate();
+  localStorage.setItem("arrangements", JSON.stringify(arrangements));
+  return arrangements;
+}
+
+function delta(n) {
+  selectedIndex = Math.min(Math.max(selectedIndex + n, 0), arrangements.length - 1);
+  draw();
+}
 
 function getPermutations(arr) {
   const results = [];
@@ -18,6 +35,9 @@ function getPermutations(arr) {
 }
 
 function draw() {
+  document.getElementById("selected-index").innerText = selectedIndex + 1;
+
+  const arrangement = arrangements[selectedIndex];
   const canvas = document.getElementById("generic-arrangement");
   const ctx = canvas.getContext("2d");
 
@@ -56,8 +76,6 @@ function draw() {
 }
 
 function getNewArrangement() {
-  arrangement = arrangements[Math.floor(Math.random() * arrangements.length)];
+  selectedIndex = Math.floor(Math.random() * arrangements.length);
   draw();
 }
-
-draw();

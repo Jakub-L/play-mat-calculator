@@ -8,13 +8,20 @@
   </head>
   <body>
     <header>
-      <h1>Play Mat Visualiser</h1>
+      <h1>Playmat Visualiser</h1>
     </header>
+    <div id="selected-index"></div>
+    <nav>
+      <button onclick="delta(-Infinity)">|&lt;</button>
+      <button onclick="delta(-100)">&lt;&lt;</button>
+      <button onclick="delta(-1)">&lt;</button>
+      <button onclick="getNewArrangement()">New Arrangement</button>
+      <button onclick="delta(1)">&gt;</button>
+      <button onclick="delta(100)">&gt;&gt;</button>
+      <button onclick="delta(Infinity)">&gt;|</button>
+    </nav>
     <main>
-      <button onclick="getNewArrangement()">Get new arrangement</button>
-      <div>
       <canvas id="generic-arrangement" width="200" height="200"></canvas>
-      </div>
       <div id="colored-arrangement"></div>
     </main>
     <script src="tiles.js"></script>
