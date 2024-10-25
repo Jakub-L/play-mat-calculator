@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Mat Visualiser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Play Mat Visualiser</h1>
+    </header>
+    <main>
+      <button onclick="getNewArrangement()">Get new arrangement</button>
+      <div>
+      <canvas id="generic-arrangement" width="200" height="200"></canvas>
+      </div>
+      <div id="colored-arrangement"></div>
+    </main>
+    <script src="tiles.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

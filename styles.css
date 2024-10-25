@@ -1,0 +1,12 @@
+#colored-arrangement {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  gap: 25px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
