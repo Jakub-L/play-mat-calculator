@@ -20,7 +20,7 @@
         <button class="flip-x" onclick="delta(-1)" aria-label="Go back 1 arrangement">
           <img src="/assets/play.svg" alt="" />
         </button>
-        <button onclick="getRandom()">Random arrangement</button>
+        <button id="get-random" onclick="getRandom()">Random arrangement</button>
         <button onclick="delta(1)">
           <img src="/assets/play.svg" alt="" aria-label="Go forward 1 arrangement" />
         </button>
@@ -34,7 +34,10 @@
     </header>
     <main>
       <canvas id="generic-arrangement" width="200" height="200"></canvas>
-      <div id="colored-arrangements"></div>
+      <div id="colored-arrangements_container">
+        <h2>Colour permutations</h2>
+        <div id="colored-arrangements"></div>
+      </div>
     </main>
     <script src="data.js"></script>
     <script src="main.js"></script>

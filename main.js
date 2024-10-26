@@ -26,7 +26,7 @@ function getPermutations(arr) {
 }
 
 function draw() {
-  document.getElementById("selected-index").innerText = selectedIndex + 1;
+  document.getElementById("selected-index").innerText = `${selectedIndex + 1} / ${arrangements.length}`;
 
   const arrangement = arrangements[selectedIndex];
   const canvas = document.getElementById("generic-arrangement");
