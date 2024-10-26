@@ -50,6 +50,7 @@ function drawGeneric() {
   ctx.textBaseline = "middle";
   ctx.fillStyle = "#09090b";
   ctx.strokeStyle = "#09090b";
+  ctx.lineWidth = 2;
 
   // Draw arrangement squares
   for (let i = 0; i < arrangement.length; i++) {
