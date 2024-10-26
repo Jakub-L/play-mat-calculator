@@ -1,12 +1,87 @@
-#colored-arrangement {
-  display: grid;
-  grid-template-columns: repeat(6, 100px);
-  gap: 25px;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
-main {
+
+/* TAGS */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #18181b;
+}
+
+body,
+main,
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
+}
+
+h1 {
+  color: #fafafa;
+  margin:  0;
+}
+
+nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+button {
+  background-color: #fafafa;
+  border: 1px solid #a1a1aa;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d4d4d8;
+}
+
+button:active {
+  background-color: #a1a1aa;
+  transform: scale(0.95);
+}
+
+button:active img {
+  transform: scale(0.9);
+}
+
+button img {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* CLASSES */
+.flip-x {
+  transform: scaleX(-1);
+}
+
+.forward-icons {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+
+/* IDS */
+#selected-index {
+  color: #fafafa;
+  font-size: 1.5rem;
+}
+
+#colored-arrangements {
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  gap: 2rem;
 }

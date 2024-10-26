@@ -9,22 +9,34 @@
   <body>
     <header>
       <h1>Playmat Visualiser</h1>
+      <span id="selected-index"></span>
+      <nav>
+        <button class="flip-x" onclick="delta(-Infinity)" aria-label="Go to first">
+          <img src="/assets/skip-to-end.svg" alt="" />
+        </button>
+        <button class="flip-x" onclick="delta(-100)" aria-label="Go back 100 arrangements">
+          <img class="forward-icons" src="/assets/forward.svg" alt="" />
+        </button>
+        <button class="flip-x" onclick="delta(-1)" aria-label="Go back 1 arrangement">
+          <img src="/assets/play.svg" alt="" />
+        </button>
+        <button onclick="getRandom()">Random arrangement</button>
+        <button onclick="delta(1)">
+          <img src="/assets/play.svg" alt="" aria-label="Go forward 1 arrangement" />
+        </button>
+        <button onclick="delta(100)">
+          <img class="forward-icons" src="/assets/forward.svg" alt="" aria-label="Go forward 100 arrangements" />
+        </button>
+        <button onclick="delta(Infinity)">
+          <img src="/assets/skip-to-end.svg" alt="" aria-label="Go to last" />
+        </button>
+      </nav>
     </header>
-    <div id="selected-index"></div>
-    <nav>
-      <button onclick="delta(-Infinity)">|&lt;</button>
-      <button onclick="delta(-100)">&lt;&lt;</button>
-      <button onclick="delta(-1)">&lt;</button>
-      <button onclick="getNewArrangement()">New Arrangement</button>
-      <button onclick="delta(1)">&gt;</button>
-      <button onclick="delta(100)">&gt;&gt;</button>
-      <button onclick="delta(Infinity)">&gt;|</button>
-    </nav>
     <main>
       <canvas id="generic-arrangement" width="200" height="200"></canvas>
-      <div id="colored-arrangement"></div>
+      <div id="colored-arrangements"></div>
     </main>
-    <script src="tiles.js"></script>
+    <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
