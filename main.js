@@ -1,3 +1,6 @@
+// GLOBALS
+const MONTSERRAT_URL = "https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2";
+
 // DATA
 /**
  * Gets the permutations of a given array.
@@ -37,12 +40,16 @@ function getRandom() {
 }
 
 // DRAWING
-function drawGeneric() {
+async function drawGeneric() {
   const canvas = document.getElementById("generic-arrangement");
   const ctx = canvas.getContext("2d");
 
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Load font
+  const font = new FontFace("Montserrat", `url(${MONTSERRAT_URL})`);
+  await font.load();
 
   // Set up properties
   ctx.font = "20px Montserrat";
